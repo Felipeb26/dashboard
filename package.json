@@ -10,7 +10,6 @@
 		"test": "ng test"
 	},
 	"private": true,
-	"homepage": "https://felipeb26.github.io/dashboard/",
 	"dependencies": {
 		"@angular/animations": "^14.1.0",
 		"@angular/cdk": "^14.0.0",

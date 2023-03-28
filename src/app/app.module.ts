@@ -37,6 +37,7 @@ import { BrainmapComponent } from './pages/brainmap/brainmap.component';
 import { CreateLoginComponent } from './pages/create-login/create-login.component';
 import { UserLogComponent } from './pages/user-log/user-log.component';
 import { AuthComponent } from './shared/authentication/auth/auth.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 registerLocaleData(localePt);
 @NgModule({
@@ -54,6 +55,7 @@ registerLocaleData(localePt);
 		UserLogComponent,
 		TableComponent,
 		CardsComponent,
+  NotFoundComponent,
 	],
 	imports: [
 		BrowserModule,

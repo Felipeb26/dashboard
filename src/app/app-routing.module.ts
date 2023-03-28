@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BrainmapComponent } from './pages/brainmap/brainmap.component';
 import { CreateLoginComponent } from './pages/create-login/create-login.component';
 import { DataComponent } from './pages/data/data.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
 		path: "",
 		component: AuthComponent,
 		children: [
-			{ path: "", component: HomeComponent, },
+			{ path: "", component: HomeComponent, pathMatch: "full" },
 			{ path: "user", component: UserLogComponent, },
 			{ path: "data", component: DataComponent, },
 			{ path: "entrada", component: ValoresComponent, },
@@ -32,6 +33,11 @@ const routes: Routes = [
 			{ path: "login", component: LoginComponent },
 			{ path: "create", component: CreateLoginComponent }
 		]
+	}, {
+		path: '404', component: NotFoundComponent,
+	},
+	{
+		path: '**', redirectTo: '/404'
 	}
 ];
 
