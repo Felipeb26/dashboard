@@ -4,7 +4,7 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build": "ng build --base-href https://felipeb26.github.io/dashboard/",
+		"build": "ng build --output-path docs --base-href https://felipeb26.github.io/dashboard/",
 		"pages": "ngh --dir dist/dashboard",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test"
