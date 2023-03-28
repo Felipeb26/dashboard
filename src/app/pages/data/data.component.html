@@ -1,0 +1,31 @@
+<div>
+	<mat-card>
+		<div class="header">
+			<button mat-button (click)="reload()">
+				<span class="material-icons">
+					restart_alt
+				</span>
+			</button>
+
+			<button mat-button (click)="changeComponent()">
+				<span class="material-icons">
+					{{state}}
+				</span>
+			</button>
+		</div>
+
+		<mat-form-field appearance="fill">
+			<mat-label>Selecione duas datas</mat-label>
+			<mat-date-range-input [rangePicker]="picker">
+				<input matStartDate placeholder="Data inicial">
+				<input matEndDate placeholder="Data final">
+			</mat-date-range-input>
+			<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+			<mat-date-range-picker #picker></mat-date-range-picker>
+		</mat-form-field>
+
+		<button mat-button> pesquisar</button>
+	</mat-card>
+	<app-table [lista]="list"></app-table>
+	<app-cards [todo]="todo" [madeit]="madeit" [finale]="finale"></app-cards>
+</div>

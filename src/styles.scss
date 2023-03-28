@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+:root {
+
+	--primary: rgb(34, 34, 34);
+	--primaryT: rgba(22, 20, 20, 0.401);
+	--secondary: rgb(242, 242, 242);
+	--contextHover: rgb(0, 165, 165);
+	--contextHoverT: rgba(0, 165, 165, 0.2);
+	// signals
+	--alert: rgb(212, 25, 25);
+	--warninng: rgb(225, 225, 0);
+	--ok: rgb(4, 129, 4);
+}
+
+html[dark] {
+
+	--primary: rgb(239, 239, 239);
+	--primaryT: rgba(184, 184, 184, 0.401);
+	--secondary: rgb(64, 64, 64);
+	--contextHover: rgb(21, 226, 226);
+	--contextHoverT: rgb(21, 226, 226, 0.2);
+	// signals
+	--alert: rgb(255, 0, 0);
+	--warninng: rgb(255, 255, 0);
+	--ok: rgb(0, 255, 0);
+}
+
+html,
+body {
+	background: var(--secondary);
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--primaryT);
+}
+
+::-webkit-scrollbar-track {
+	background: var(--secondary);
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+	box-shadow: 0 0 0.3rem 0.1rem var(--primary);
+	border: 1px solid var(--primary);
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+	background-color: var(--contextHover) !important;
+}
+
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+	background-color: var(--contextHover) !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+	background-color: var(--contextHover) !important;
+}
+
+.menu+* .mat-menu-panel {
+	background: var(--primaryT);
+	border: 2px solid var(--primary);
+	transition: all ease 0.5s;
+
+	& button {
+		letter-spacing: 1px;
+		color: var(--secondary);
+		text-transform: uppercase;
+		font-weight: bold;
+		transition: all ease 0.5s;
+	}
+
+	& button:hover {
+		background: var(--primary);
+		border: 1px solid var(--contextHover);
+		border-radius: 5px;
+		color: var(--contextHover);
+	}
+}
+
+.mat-form-field-required-marker {
+	color: var(--primary)
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-out-spin-button{
+	margin: 0;
+	display: none;
+}

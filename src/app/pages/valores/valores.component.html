@@ -1,0 +1,92 @@
+<div class="content">
+
+	<form (onSubmit)="addBank()" [formGroup]="bankForm" #formDir="ngForm">
+		<mat-card class="card-add-bank">
+			<mat-card-title>
+				adicionar banco
+			</mat-card-title>
+			<mat-card-content>
+
+				<mat-form-field appearance="fill" style="display: none;">
+					<mat-label>id</mat-label>
+					<input matInput type="number" formControlName="id" >
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>nome</mat-label>
+					<input matInput type="text" formControlName="nome" required>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>conta</mat-label>
+					<input matInput type="text" formControlName="conta" required>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>agencia</mat-label>
+					<input matInput type="text" formControlName="agencia" required>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Debito</mat-label>
+					<input matInput type="number" formControlName="debito" required>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>credito</mat-label>
+					<input matInput type="number" formControlName="credito" required>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>emprestimo</mat-label>
+					<input matInput type="number" formControlName="emprestimo" required>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>poupanca</mat-label>
+					<input matInput type="text" formControlName="poupanca" required>
+				</mat-form-field>
+
+			</mat-card-content>
+
+			<mat-card-actions>
+				<button mat-button (click)="addBank()">salvar banco</button>
+			</mat-card-actions>
+		</mat-card>
+	</form>
+
+	<div class="banks" *ngFor="let bank of bancos">
+		<mat-card>
+			<mat-card-header>
+				<mat-card-title>{{bank.nome}}</mat-card-title>
+				<mat-card-title>
+					<span>Agencia: {{bank.agencia}}&nbsp;</span>
+					<span>&nbsp; Conta: {{bank.conta}}</span>
+				</mat-card-title>
+			</mat-card-header>
+			<mat-card-content>
+				<ul>
+					<li>Debito: {{bank.debito | currency: "BRL"}}</li>
+					<li>Credito: {{bank.credito  | currency: "BRL"}}</li>
+					<li>Emprestimo: {{bank.emprestimo  | currency: "BRL"}}</li>
+					<li>Poupanca: {{bank.poupanca  | currency: "BRL"}}</li>
+					<li>Total: {{bank.value | currency: "BRL"}}</li>
+				</ul>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-button (click)="editBankInfo(bank)">
+					<span class="material-icons">
+						edit
+					</span>
+					editar
+				</button>
+				<button mat-button (click)="deleteBankInfo(bank)">
+					<span class="material-icons">
+						delete
+					</span>
+					delete
+				</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+</div>

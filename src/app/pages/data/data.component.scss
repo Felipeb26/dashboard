@@ -1,0 +1,41 @@
+mat-card {
+	margin: 1rem 2.5rem;
+	flex-direction: column;
+	display: flex;
+	width: 25rem;
+	background: var(--secondary);
+}
+
+.header {
+	justify-content: space-around;
+	display: flex;
+	width: 100%;
+}
+
+mat-label {
+	color: var(--primary);
+}
+
+button {
+	box-shadow: 0 0 2px 3px var(--primary);
+	border: 2px solid var(--secondary);
+	background: var(--primary);
+	color: var(--secondary);
+	text-transform: uppercase;
+	transition: all ease 0.5s;
+	margin: 0.8rem 2rem;
+	font-weight: 550;
+	flex: 1;
+}
+
+button:hover {
+	box-shadow: 0 0 2px 2px var(--contextHover);
+	border: 2px solid var(--primary);
+	background: var(--secondary);
+	color: var(--contextHover);
+}
+
+button:active {
+	background: var(--primaryT);
+	color: var(--secondary);
+}

@@ -1,0 +1,65 @@
+<mat-toolbar >
+	<button mat-icon-button (click)="opened=!opened">
+		<span class="material-icons">
+			menu
+		</span>
+	</button>
+	<h1 routerLink="">dashboard</h1>
+	<button mat-icon-button [mat-menu-trigger-for]="menu">
+		<span class="material-icons">
+			people
+		</span>
+	</button>
+	<mat-menu #menu="matMenu" backdropClass="menu">
+		<button mat-menu-item routerLink="user">
+			<span class="material-icons">
+				person
+			</span>
+			login
+		</button>
+		<button mat-menu-item (click)="sair()">
+			<span class="material-icons">
+				logout
+			</span>
+			logout
+		</button>
+		<button mat-menu-item (click)="changeState()">
+			<span class="material-icons">
+				{{state}}_mode
+			</span>
+			{{state}}
+		</button>
+	</mat-menu>
+</mat-toolbar>
+<mat-sidenav-container>
+	<mat-sidenav [(opened)]="opened">
+		<button mat-button routerLink="">
+			<span class="material-icons">
+				home
+			</span>
+			Home
+		</button>
+		<button mat-button routerLink="data">
+			<span class="material-icons">
+				analytics
+			</span>
+			Dados
+		</button>
+		<button mat-button routerLink="entrada">
+			<span class="material-icons">
+				account_balance
+			</span>
+			Valores
+		</button>
+		<button mat-button routerLink="mapa-mental">
+			<span class="material-icons">
+				psychology
+			</span>
+			Mapa Mental
+		</button>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<router-outlet>
+		</router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>

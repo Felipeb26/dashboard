@@ -1,0 +1,58 @@
+mat-toolbar {
+	display: flex;
+	justify-content: space-between;
+	background: var(--primary);
+	color: var(--secondary);
+
+	& h1 {
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		font-weight: bold;
+		font-style: italic;
+		cursor: pointer;
+	}
+
+	& button {
+		transition: all ease-in-out 0.8s;
+	}
+
+	& button:hover {
+		border: 3px solid var(--contextHover);
+	}
+
+}
+
+mat-sidenav-container {
+	height: 89.9%;
+
+	& button {
+		color: var(--secondary);
+		transition: all ease 0.5s;
+	}
+
+	& button:hover {
+		border-bottom: 3px solid var(--contextHover);
+		border-radius: 0;
+		color: var(--contextHover);
+	}
+}
+
+mat-sidenav {
+	width: 10rem;
+	display: flex;
+	background: var(--primaryT);
+	color: var(--secondary);
+
+	& button {
+		border-bottom: 3px solid var(--secondary);
+		text-shadow: 0 0 15px var(--primary);
+		width: 90%;
+		border-radius: 5px;
+		margin: 5% 5%;
+	}
+}
+
+mat-sidenav-content {
+	background: var(--secondary);
+	padding: 1rem 0 0 0;
+}

@@ -1,0 +1,33 @@
+<div class="card">
+	<mat-card>
+		<img [src]="foto">
+		<mat-form-field appearance="fill">
+			<mat-label>nome</mat-label>
+			<input matInput type="email" name="" [(ngModel)]="user.nome" [disabled]="enable">
+		</mat-form-field>
+		<mat-form-field appearance="fill">
+			<mat-label>email</mat-label>
+			<input matInput type="email" name="" [(ngModel)]="user.email" [disabled]="enable">
+		</mat-form-field>
+		<mat-form-field appearance="fill">
+			<mat-label>senha</mat-label>
+			<input matInput type="email" name="" [(ngModel)]="user.senha" [disabled]="enable">
+		</mat-form-field>
+
+		<mat-card-content *ngFor="let bank of bancos">
+			<h1>Bancos salvos</h1>
+			<div class="banco">
+				<div class="card">
+					<mat-card-title *ngIf="bank.nome">{{bank.nome}}</mat-card-title>
+				</div>
+			</div>
+		</mat-card-content>
+
+		<mat-card-actions>
+			<button mat-button (click)="enableUpdate()">alterar</button>
+			<button mat-button>salvar</button>
+		</mat-card-actions>
+
+	</mat-card>
+
+</div>

@@ -1,0 +1,109 @@
+.data {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem 0 0 0;
+}
+
+mat-card {
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+	width: 30rem;
+	height: 36.5rem;
+	padding: 2rem;
+	background: var(--secondary);
+	color: var(--primary);
+
+	& mat-card-subtitle {
+		justify-content: space-between;
+		align-items: center;
+		display: flex;
+		color: var(--primary);
+		font-size: 1rem;
+	}
+
+	& mat-card-content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	& mat-form-field {
+		color: var(--primary);
+		width: 30rem;
+	}
+
+	& mat-label {
+		text-transform: capitalize;
+		color: var(--primary);
+	}
+
+	& a {
+		text-decoration: underline;
+		color: var(--contextHover);
+	}
+}
+
+#img-upload {
+	display: none;
+}
+
+img {
+	box-shadow: 0 0 5px 5px var(--primaryT), inset 0 0 2px 2px var(--primaryT);
+	border: 2px solid var(--primary);
+	border-radius: 50%;
+	min-width: 12rem;
+	min-height: 12rem;
+	width: 10rem;
+	height: 10rem;
+}
+
+label {
+	box-shadow: 0 0 2px 2px var(--primaryT);
+	border: 2px solid var(--primary);
+	border-radius: 5px;
+	padding: 0.1rem;
+	margin: 0.2rem 0;
+	font-weight: 500;
+	letter-spacing: 0.1rem;
+	color: var(--primary);
+	transition: all ease 0.5s;
+}
+
+label:hover {
+	box-shadow: 0 0 2px 2px var(--contextHover);
+	border: 2px solid var(--contextHover);
+	color: var(--contextHover);
+}
+
+label:active {
+	box-shadow: 0 0 0.5rem 1rem var(--contextHoverT);
+	border: 2px solid var(--primary);
+	color: var(--primary);
+}
+
+
+mat-card-actions {
+	& button {
+		text-transform: uppercase;
+		box-shadow: 0 0 3px 3px var(--primary);
+		border: 2px solid var(--secondary);
+		background: var(--primary);
+		color: var(--secondary);
+		transition: all ease 0.5s;
+		font-weight: 550;
+	}
+
+	& button:hover {
+		box-shadow: 0 0 0.5rem 0.5rem var(--contextHoverT);
+		border: 2px solid var(--primary);
+		background: var(--contextHover);
+		color: var(--secondary);
+	}
+	& button:active {
+		box-shadow: 0 0 0.5rem 1rem var(--contextHoverT);
+		border: 2px solid var(--primary);
+		background: var(--contextHover);
+		color: var(--secondary);
+	}
+}

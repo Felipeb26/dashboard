@@ -1,0 +1,189 @@
+<div class="data">
+	<mat-card>
+		<div>
+			<button class="resetBtn" id="trash" mat-flat-button (click)="reload()">
+				<span class="material-icons">
+					restart_alt
+				</span>
+			</button>
+			<button mat-button id="trash" cdkDropList [cdkDropListData]="trash" (cdkDropListDropped)="drop($event)"
+				(click)="delete()">
+				<span class="material-icons">
+					delete
+				</span>
+			</button>
+		</div>
+		<mat-form-field appearance="fill">
+			<mat-label>Selecione duas datas</mat-label>
+			<mat-date-range-input [rangePicker]="picker">
+				<input matStartDate placeholder="Data inicial">
+				<input matEndDate placeholder="Data final">
+			</mat-date-range-input>
+			<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+			<mat-date-range-picker #picker></mat-date-range-picker>
+		</mat-form-field>
+	</mat-card>
+
+	<app-flip-card>
+		<flip-card-front>
+			<mat-card-title>inicio</mat-card-title>
+			<mat-card-content id="todo" [cdkDropListData]="todo" [cdkDropListConnectedTo]="['finale','madeit','trash']"
+				cdkDropList (cdkDropListDropped)="drop($event)">
+				<div class="content" *ngFor="let item of todo" cdkDrag>
+					{{item.comida}}
+				</div>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-icon-button class="add" name="inicio" (click)="showInputs(0)">
+					<span class="material-icons">
+						add_circle_outline
+					</span>
+				</button>
+				<div class="actions">
+					<div class="content">
+						{{somaTodo | currency: 'BRL'}}
+					</div>
+					<div class="content">
+						{{todo.length}} Itens;
+					</div>
+				</div>
+				<div class="inputs">
+					<div class="sideInputBtn">
+						<mat-form-field appearance="fill">
+							<mat-label>ITem</mat-label>
+							<input id="todoInput" matInput type="text" placeholder="insira o nome do item"
+								[(ngModel)]="key">
+						</mat-form-field>
+						<button mat-icon-button (click)="hideInputs(0)">
+							<span class="material-icons">
+								remove
+							</span>
+						</button>
+					</div>
+					<div class="sideInputBtn">
+						<mat-form-field appearance="fill">
+							<mat-label>Valor</mat-label>
+							<input id="todoInput" matInput type="text" placeholder="insira o valor aqui"
+								[(ngModel)]="value">
+						</mat-form-field>
+						<button mat-icon-button (click)="addValue(0)">
+							<span class="material-icons">check_circle</span>
+						</button>
+					</div>
+				</div>
+			</mat-card-actions>
+		</flip-card-front>
+		<flip-card-back>
+			<canvas id="piechart"></canvas>
+		</flip-card-back>
+	</app-flip-card>
+
+	<app-flip-card>
+		<flip-card-front>
+			<mat-card-title>meio</mat-card-title>
+			<mat-card-content id="madeit" [cdkDropListData]="madeit" [cdkDropListConnectedTo]="['todo','finale']"
+				cdkDropList (cdkDropListDropped)="drop($event)">
+				<div class="content" *ngFor="let item of madeit" cdkDrag>
+					{{item.comida}}
+				</div>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-icon-button class="add" name="inicio" (click)="showInputs(1)">
+					<span class="material-icons">
+						add_circle_outline
+					</span>
+				</button>
+				<div class="actions">
+					<div class="content">
+						{{somaMadeit |currency: 'BRL'}}
+					</div>
+					<div class="content">
+						{{madeit.length}} Itens;
+					</div>
+				</div>
+				<div class="inputs">
+					<div class="sideInputBtn">
+						<mat-form-field appearance="fill">
+							<mat-label>ITem</mat-label>
+							<input id="todoInput" matInput type="text" placeholder="insira o nome do item"
+								[(ngModel)]="key">
+						</mat-form-field>
+						<button mat-icon-button (click)="hideInputs(1)">
+							<span class="material-icons">
+								remove
+							</span>
+						</button>
+					</div>
+					<div class="sideInputBtn">
+						<mat-form-field appearance="fill">
+							<mat-label>Valor</mat-label>
+							<input id="todoInput" matInput type="text" placeholder="insira o valor aqui"
+								[(ngModel)]="value">
+						</mat-form-field>
+						<button mat-icon-button (click)="addValue(1)">
+							<span class="material-icons">check_circle</span>
+						</button>
+					</div>
+				</div>
+			</mat-card-actions>
+		</flip-card-front>
+		<flip-card-back>
+			<canvas id="madeits"></canvas>
+		</flip-card-back>
+	</app-flip-card>
+
+	<app-flip-card>
+		<flip-card-front>
+			<mat-card-title>fim</mat-card-title>
+			<mat-card-content id="finale" [cdkDropListData]="finale" [cdkDropListConnectedTo]="['todo','madeit']"
+				cdkDropList (cdkDropListDropped)="drop($event)">
+				<div class="content" *ngFor="let item of finale" cdkDrag>
+					{{item.comida}}
+				</div>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-icon-button class="add" name="inicio" (click)="showInputs(2)">
+					<span class="material-icons">
+						add_circle_outline
+					</span>
+				</button>
+				<div class="actions">
+					<div class="content">
+						R$ {{somaFinale| currency: 'BRL'}}
+					</div>
+					<div class="content">
+						{{finale.length}} Itens;
+					</div>
+				</div>
+				<div class="inputs">
+					<div class="sideInputBtn">
+						<mat-form-field appearance="fill">
+							<mat-label>ITem</mat-label>
+							<input id="todoInput" matInput type="text" placeholder="insira o nome do item"
+								[(ngModel)]="key">
+						</mat-form-field>
+						<button mat-icon-button (click)="hideInputs(2)">
+							<span class="material-icons">
+								remove
+							</span>
+						</button>
+					</div>
+					<div class="sideInputBtn">
+						<mat-form-field appearance="fill">
+							<mat-label>Valor</mat-label>
+							<input id="todoInput" matInput type="text" placeholder="insira o valor aqui"
+								[(ngModel)]="value">
+						</mat-form-field>
+						<button mat-icon-button (click)="addValue(2)">
+							<span class="material-icons">check_circle</span>
+						</button>
+					</div>
+				</div>
+			</mat-card-actions>
+		</flip-card-front>
+		<flip-card-back>
+			<canvas id="finales"></canvas>
+		</flip-card-back>
+	</app-flip-card>
+
+</div>

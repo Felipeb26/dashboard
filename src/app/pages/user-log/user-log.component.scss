@@ -1,0 +1,91 @@
+.card {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 100%;
+	margin: 0.5rem 0;
+}
+
+mat-card {
+	background: var(--secondary);
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+	padding: 2rem;
+	width: 40rem;
+}
+
+mat-card-content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--primary);
+
+	& h1{
+		text-decoration: underline;
+		letter-spacing: 0.1rem;
+		font-style: italic;
+		font-weight: 650;
+	}
+	& .banco {
+		flex-wrap: wrap;
+		display: flex;
+		width: 100%;
+	}
+
+	& .card {
+		border: 2px solid var(--primary);
+		border-radius: 5px;
+		width: 100%;
+		padding: 1rem;
+	}
+}
+
+mat-form-field {
+	box-shadow: 1px -32px 137px -2px var(--primaryT) inset;
+	-webkit-box-shadow: 1px -32px 137px -2px var(--primaryT) inset;
+	-moz-box-shadow: 1px -32px 137px -2px var(--primaryT) inset;
+
+	border-radius: 5px;
+	margin: 0.5rem 0;
+	color: var(--primary);
+	width: 90%;
+}
+
+mat-label {
+	text-transform: uppercase;
+	color: var(--primary);
+	font-weight: 550;
+}
+
+mat-card-actions {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+button {
+	box-shadow: 0 0 2px 2px var(--primary);
+	border: 2px solid var(--secondary);
+	background: var(--primary);
+	color: var(--secondary);
+	text-transform: uppercase;
+	font-weight: 650;
+	transition: all ease 0.5s;
+}
+
+button:hover {
+	box-shadow: 0 0 5px 5px var(--contextHover);
+	background: var(--secondary);
+	color: var(--primary);
+}
+
+img {
+	box-shadow: 0 0 2px 2px var(--primary), inset 0 0 3px 3px var(--primary);
+	border-radius: 50%;
+	min-width: 180px;
+	min-height: 180px;
+}

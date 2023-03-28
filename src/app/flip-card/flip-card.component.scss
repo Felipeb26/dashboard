@@ -1,0 +1,54 @@
+.container {
+	width: 19rem;
+	height: 22rem;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	perspective: 800px;
+	overflow: hidden;
+	background: var(--secondary);
+	color: var(--primary);
+
+}
+
+.card {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 10px;
+	transform-style: preserve-3d;
+	transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card .front,
+.card .back {
+	backface-visibility: hidden;
+	border-radius: 10px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+
+.flipped {
+	transform: rotateY(180deg);
+}
+
+.arrow-icon {
+	box-shadow: inset 0 0 10rem 1rem var(--contextHover);
+	opacity: 1;
+	border-radius: 50%;
+	justify-content: center;
+	position: absolute;
+	display: flex;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	height: 1.5rem;
+	width: 1.5rem;
+	cursor: pointer;
+	z-index: 5;
+}

@@ -1,0 +1,29 @@
+<mat-card>
+	<mat-card-header>
+		<img src="{{image}}" alt="" mat-card-image>
+	</mat-card-header>
+	<mat-card-content>
+		<mat-form-field appearance="fill">
+			<mat-label>nome</mat-label>
+			<input matInput type="text" [(ngModel)]="nome">
+		</mat-form-field>
+		<mat-form-field appearance="fill">
+			<mat-label>senha</mat-label>
+			<input matInput [type]="hide ?'password' : 'text'" [(ngModel)]="senha">
+			<button matSuffix mat-icon-button (click)="hide = !hide">
+				<span class="material-icons">
+					{{hide? 'visibility': 'visibility_off'}}
+				</span>
+			</button>
+		</mat-form-field>
+		<button class="saveBtn" mat-raised-button type="submit" color="primary" (click)="login()">salvar</button>
+	</mat-card-content>
+	<mat-card-actions>
+		<span>
+			<a>esqueceu a senha?</a>
+		</span>
+		<span routerLink="create">
+			<a>criar cadastro?</a>
+		</span>
+	</mat-card-actions>
+</mat-card>

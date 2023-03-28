@@ -1,0 +1,20 @@
+<mat-card class="container">
+	<div [ngClass]="toogleProperty? 'flipped' : ''" class="card">
+		<div class="front">
+			<ng-content select="flip-card-front"></ng-content>
+			<div class="arrow-icon" (click)="toggle()">
+				<span class="material-icons">
+					swipe
+				</span>
+			</div>
+		</div>
+		<div class="back">
+			<ng-content select="flip-card-back"></ng-content>
+			<div class="arrow-icon" (click)="toggle()">
+				<span class="material-icons">
+					swipe
+				</span>
+			</div>
+		</div>
+	</div>
+</mat-card>

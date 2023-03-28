@@ -1,0 +1,126 @@
+<div class="charts">
+
+	<mat-card>
+		<mat-card-title *ngIf="cotacoes[0]">
+			{{cotacoes[0].name}}
+			<mat-checkbox [(ngModel)]="BITCOIN" (change)="check($event,'BTCBRL')"></mat-checkbox>
+		</mat-card-title>
+		<mat-card-content>
+			<canvas id="BTC"></canvas>
+			<div class="dados">
+				<div class="dado" >
+					<p>Venda:</p>
+					<span *ngIf="cotacoes[0]">{{cotacoes[0].ask | currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>Compra:</p>
+					<span *ngIf="cotacoes[0]">{{cotacoes[0].bid| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>máximo:</p>
+					<span *ngIf="cotacoes[0]">{{cotacoes[0].high| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>minimo:</p>
+					<span *ngIf="cotacoes[0]">{{cotacoes[0].low| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>Variação:</p>
+					<span *ngIf="cotacoes[0]">{{cotacoes[0].varBid}}</span>
+				</div>
+				<div class="dado">
+					<p>Porcentagem de Variação:</p>
+					<span *ngIf="cotacoes[0]">{{cotacoes[0].pctChange}}</span>
+				</div>
+			</div>
+		</mat-card-content>
+		<div class="resume">
+			<span *ngIf="cotacoes[0]">Valor Atual: {{cotacoes[0].bid| currency: 'BRL'}}</span>
+			<span *ngIf="cotacoes[0]">Ultima atualização: {{cotacoes[0].create_date | date: "dd/MM/yyyy hh:mm:ss"}}</span>
+		</div>
+	</mat-card>
+
+	<mat-card>
+		<mat-card-title *ngIf="cotacoes[1]">
+			{{cotacoes[1].name}}
+			<mat-checkbox [(ngModel)]="EURO" (change)="check($event,'EURBRL')"></mat-checkbox>
+		</mat-card-title>
+		<mat-card-content>
+			<canvas id="EUR"></canvas>
+			<div class="dados">
+				<div class="dado">
+					<p>Venda:</p>
+					<span *ngIf="cotacoes[1]">{{cotacoes[1].ask | currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>Compra:</p>
+					<span *ngIf="cotacoes[1]">{{cotacoes[1].bid| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>máximo:</p>
+					<span *ngIf="cotacoes[1]">{{cotacoes[1].high| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>low:</p>
+					<span *ngIf="cotacoes[1]">{{cotacoes[1].low| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>Variação:</p>
+					<span *ngIf="cotacoes[1]">{{cotacoes[1].varBid}}</span>
+				</div>
+				<div class="dado">
+					<p>Porcentagem de Variação:</p>
+					<span *ngIf="cotacoes[1]">{{cotacoes[1].pctChange}}</span>
+				</div>
+			</div>
+		</mat-card-content>
+		<div class="resume">
+			<span *ngIf="cotacoes[1]">Valor Atual: {{cotacoes[1].bid| currency: 'BRL'}}</span>
+			<span *ngIf="cotacoes[1]">Ultima atualização: {{cotacoes[1].create_date | date: "dd/MM/yyyy hh:mm:ss"}}</span>
+		</div>
+	</mat-card>
+
+	<mat-card>
+		<mat-card-title *ngIf="cotacoes[2]">
+			{{cotacoes[2].name}}
+			<mat-checkbox [(ngModel)]="DOLLAR" (change)="check($event,'USDBRL')"></mat-checkbox>
+		</mat-card-title>
+		<mat-card-content>
+			<canvas id="USD"></canvas>
+			<div class="dados">
+				<div class="dado">
+					<p>Venda:</p>
+					<span *ngIf="cotacoes[2]">{{cotacoes[2].ask | currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>Compra:</p>
+					<span *ngIf="cotacoes[2]">{{cotacoes[2].bid| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>máximo:</p>
+					<span *ngIf="cotacoes[2]">{{cotacoes[2].high| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>minimo</p>
+					<span *ngIf="cotacoes[2]">{{cotacoes[2].low| currency: 'BRL'}}</span>
+				</div>
+				<div class="dado">
+					<p>Variação:</p>
+					<span *ngIf="cotacoes[2]">{{cotacoes[2].varBid}}</span>
+				</div>
+				<div class="dado">
+					<p>Porcentagem de Variação:</p>
+					<span *ngIf="cotacoes[2]">{{cotacoes[2].pctChange}}</span>
+				</div>
+			</div>
+		</mat-card-content>
+		<div class="resume">
+			<span *ngIf="cotacoes[2]">Valor Atual: {{cotacoes[2].bid| currency: 'BRL'}}</span>
+			<span *ngIf="cotacoes[2]">Ultima atualização: {{cotacoes[2].create_date | date: "dd/MM/yyyy hh:mm:ss"}}</span>
+		</div>
+	</mat-card>
+</div>
+
+<div class="year">
+	<app-currency [name]="nome"></app-currency>
+</div>
